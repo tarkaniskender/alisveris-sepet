@@ -2,6 +2,7 @@ import React from 'react'
 import productData from './productData'
 
 const ProductItem = ({product, cart, setCart}) => {
+    const findProduct = cart.find((item) => item.id === product.id);
 
     const addToCart = (product)=> {
         setCart([...cart, product])
@@ -16,7 +17,7 @@ const ProductItem = ({product, cart, setCart}) => {
             {product.name}
         </h2>
         <p className=' text-gray-500 my-2'> {product.price} </p>
-        <button className="bg-blue-500 text-white px-4 py-[8px] rounded hover:bg-blue-600 w-full" onClick={()=> addToCart(product)}>Sepete Ekle</button>
+        <button className="bg-blue-500 text-white px-4 py-[8px] rounded hover:bg-blue-600 w-full" onClick={()=> addToCart(product)} disabled={findProduct}>Sepete Ekle</button>
         </div>
   )
 }
