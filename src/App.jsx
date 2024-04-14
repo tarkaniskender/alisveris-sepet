@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div className="container mx-auto p-4">
-          < Header />
+          < Header cart={cart} />
           <Products cart={cart} setCart={setCart} />
           <Cart cart={cart} />
       </div>
